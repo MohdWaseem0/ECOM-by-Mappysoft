@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Tutorials",
+    "slug": "tutorials",
+    "description": "Step-by-step guides to help you learn new skills.",
+    "count": 1
+  },
+  {
+    "name": "Guides",
+    "slug": "guides",
+    "description": "Comprehensive guides on various topics.",
+    "count": 0
+  },
+  {
+    "name": "Case Studies",
+    "slug": "case-studies",
+    "description": "Real-world examples and case studies.",
+    "count": 0
+  }
+]
