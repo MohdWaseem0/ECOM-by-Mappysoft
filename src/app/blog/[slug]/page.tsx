@@ -12,7 +12,13 @@ import { generateBlogPostSchema } from "@/lib/schema"
 import type { Metadata } from 'next'
 
 // Generate metadata for the page
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
   
   if (!post) {

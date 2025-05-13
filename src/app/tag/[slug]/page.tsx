@@ -89,7 +89,13 @@ const defaultTag = {
   posts: []
 };
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
   const tagInfo = tags[params.slug as keyof typeof tags] || { name: params.slug.replace(/-/g, ' ') };
   const tagName = tagInfo.name || params.slug.replace(/-/g, ' ');
   

@@ -12,13 +12,28 @@ const mainNavItems = [
   { name: "Home", path: "/" },
   { 
     name: "Services", 
-    path: "#",
+    path: "/services",
     children: [
-      { name: "Meta Advertising", path: "/category/meta-advertising" },
-      { name: "Amazon", path: "/category/amazon" },
-      { name: "Flipkart", path: "/category/flipkart" },
-      { name: "Meesho", path: "/category/meesho" },
-      { name: "Other Marketplaces", path: "/category/other-marketplaces" },
+      { 
+        name: "B2B Marketplace Management", 
+        path: "/services/b2b",
+        description: "Amazon Business, Alibaba, IndiaMART & more"
+      },
+      { 
+        name: "B2C Marketplace Management", 
+        path: "/services/b2c",
+        description: "Amazon, Flipkart, Myntra & 10+ platforms"
+      },
+      { 
+        name: "Performance Marketing", 
+        path: "/services/performance-marketing",
+        description: "PPC, Social Ads & ROI Optimization"
+      },
+      { 
+        name: "Creative & Content", 
+        path: "/services/creative-content",
+        description: "Photography, A+ Content & Copywriting"
+      },
     ]
   },
   { 

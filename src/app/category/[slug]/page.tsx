@@ -114,7 +114,13 @@ const categories = {
   }
 };
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
   const category = categories[params.slug as keyof typeof categories];
   
   if (!category) {
