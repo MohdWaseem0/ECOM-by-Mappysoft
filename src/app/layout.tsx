@@ -1,16 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
-import dynamic from 'next/dynamic'
 import { generateWebsiteSchema, generateOrganizationSchema } from '@/lib/schema'
-
-const inter = Inter({ subsets: ['latin'] })
-
-// Dynamically import the performance monitor to avoid affecting initial load
-const PerformanceMonitor = dynamic(() => import('@/components/performance-monitor'), { ssr: false })
+import ClientPerformanceMonitor from '@/components/client-performance-monitor'
+import ClientBody from '@/components/client-body'
 
 export const metadata: Metadata = {
   title: {
@@ -74,7 +69,7 @@ export default function RootLayout({
         {/* DNS prefetch for third-party domains */}
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
-      <body className={inter.className}>
+      <ClientBody>
         {/* JSON-LD structured data */}
         <script
           type="application/ld+json"
@@ -103,8 +98,8 @@ export default function RootLayout({
         </ThemeProvider>
         
         {/* Add performance monitor */}
-        <PerformanceMonitor />
-      </body>
+        <ClientPerformanceMonitor />
+      </ClientBody>
     </html>
   )
 } 
