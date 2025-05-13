@@ -1,5 +1,3 @@
-git add .
-git commit -m "fix: resolve TypeScript errors and clean up API routes"
 import { Metadata } from 'next';
 import Link from 'next/link';
 
